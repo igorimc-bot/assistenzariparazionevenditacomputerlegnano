@@ -2,15 +2,16 @@
     --primary-bg: #ffffff;
     --secondary-bg: #f8fafc;
     --card-bg: #ffffff;
-    --primary-accent: #f59e0b;
-    /* Cyber Orange */
-    --secondary-accent: #fbbf24;
-    /* Lighter Amber */
-    --text-main: #1e293b;
+    --primary-accent: #9b111e;
+    /* Dark Ruby Red */
+    --secondary-accent: #d41a2c;
+    /* Brighter Red for accents */
+    --text-main: #0f172a;
+    /* Solid Black/Slate */
     --text-muted: #64748b;
     --glass-border: 1px solid rgba(0, 0, 0, 0.05);
-    --shadow-soft: 0 10px 40px rgba(245, 158, 11, 0.08);
-    /* Tinted shadow for warmth */
+    --shadow-soft: 0 10px 40px rgba(155, 17, 30, 0.08);
+    /* Hint of Ruby in shadows */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -113,8 +114,9 @@ ul {
 }
 
 .btn-cta:hover {
-    background: #d97706;
-    box-shadow: 0 4px 15px rgba(245, 158, 11, 0.3);
+    background: #7d0e18;
+    /* Even darker red */
+    box-shadow: 0 4px 15px rgba(155, 17, 30, 0.3);
 }
 
 /* Hero Slideshow (Light Overlay) */
@@ -297,7 +299,8 @@ ul {
 .service-card h3 {
     font-size: 1.4rem;
     margin-bottom: 15px;
-    color: var(--primary-accent);
+    color: var(--text-main);
+    /* Restored to Black per user request */
 }
 
 .btn-text {
