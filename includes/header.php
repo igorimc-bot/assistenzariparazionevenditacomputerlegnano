@@ -1,7 +1,7 @@
 <header class="header">
     <div class="container">
         <div class="logo">
-            <a href="/">La Legnano Informatica (Riparazione PC)</a>
+            <a href="/">Assistenza Informatica Professionale - INFORMATICA LEGNANO -</a>
         </div>
         <nav class="nav">
             <a href="/#servizi">I Servizi</a>
