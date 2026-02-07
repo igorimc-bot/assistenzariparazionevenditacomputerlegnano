@@ -528,11 +528,71 @@ ul {
     padding: 60px;
 }
 
-.col-form {
-    flex: 1;
+.intro-text {
+    font-size: 1.15rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 40px;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    margin-bottom: 50px;
+}
+
+.benefit-item {
+    display: flex;
+    gap: 15px;
+}
+
+.benefit-item i {
+    font-size: 1.5rem;
+    color: var(--primary-accent);
+    margin-top: 3px;
+}
+
+.benefit-item strong {
+    display: block;
+    font-size: 0.95rem;
+    color: #0f172a;
+    margin-bottom: 5px;
+}
+
+.benefit-item p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+    margin: 0;
+}
+
+.service-details-box {
     background: #f8fafc;
-    padding: 60px 40px;
-    border-left: 1px solid #e2e8f0;
+    padding: 40px;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-accent);
+    margin-bottom: 40px;
+}
+
+.service-details-box h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.service-desc {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text-main);
+}
+
+.local-trust {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    border-top: 1px solid #e2e8f0;
+    padding-top: 20px;
+    font-style: italic;
 }
 
 .col-form h3 {

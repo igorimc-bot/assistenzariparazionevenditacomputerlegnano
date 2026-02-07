@@ -76,15 +76,47 @@ $meta_description = "Cerchi " . htmlspecialchars($service['name']) . " a " . htm
         <div class="container">
             <div class="content-wrapper">
                 <div class="col-text">
-                    <h2>Perché scegliere noi per <?= htmlspecialchars($service['name']) ?>?</h2>
-                    <p>Operiamo a <strong><?= htmlspecialchars($zone['name']) ?></strong> con tecnici qualificati.</p>
-                    <ul class="benefits-list">
-                        <li><i class="fas fa-check"></i> Intervento Rapido</li>
-                        <li><i class="fas fa-check"></i> Prezzi Trasparenti</li>
-                        <li><i class="fas fa-check"></i> Garanzia sul lavoro</li>
-                        <li><i class="fas fa-check"></i> Reperibilità H24</li>
-                    </ul>
-                    <p class="service-desc"><?= nl2br(htmlspecialchars($service['description'])) ?></p>
+                    <h2>Assistenza Specialistica: <?= htmlspecialchars($service['name']) ?></h2>
+                    <p class="intro-text">Stai cercando un tecnico esperto per
+                        <strong><?= htmlspecialchars($service['name']) ?> a
+                            <?= htmlspecialchars($zone['name']) ?></strong>? Offriamo un servizio di pronto intervento
+                        professionale, risolutivo e trasparente.</p>
+
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <i class="fas fa-bolt"></i>
+                            <div>
+                                <strong>Intervento Rapido</strong>
+                                <p>Siamo operativi a <?= htmlspecialchars($zone['name']) ?> con tempi di risposta
+                                    brevissimi.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <strong>Garanzia 100%</strong>
+                                <p>Ogni nostra riparazione è coperta da garanzia e assistenza post-intervento.</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <i class="fas fa-euro-sign"></i>
+                            <div>
+                                <strong>Prezzi Chiari</strong>
+                                <p>Preventivi gratuiti e trasparenti prima di ogni riparazione, senza sorprese.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-details-box">
+                        <h3>Dettagli del Servizio</h3>
+                        <p class="service-desc"><?= nl2br(htmlspecialchars($service['description'])) ?></p>
+                    </div>
+
+                    <div class="local-trust">
+                        <p><i class="fas fa-map-marker-alt"></i> Il nostro laboratorio e i nostri tecnici mobili servono
+                            quotidianamente la zona di <strong><?= htmlspecialchars($zone['name']) ?></strong>,
+                            garantendo la massima comodità per te o la tua azienda.</p>
+                    </div>
                 </div>
                 <div class="col-form" id="contatti">
                     <h3>Richiedi Assistenza</h3>
