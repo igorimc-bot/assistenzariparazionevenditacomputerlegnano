@@ -87,6 +87,7 @@ ul {
 .logo a {
     font-size: 1.5rem;
     background: linear-gradient(to right, var(--primary-accent), #ffffff);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 900;
@@ -175,6 +176,7 @@ ul {
     line-height: 1.1;
     margin-bottom: 20px;
     background: linear-gradient(to bottom right, #fff, #aaa);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -522,4 +524,88 @@ ul {
     .header .nav {
         display: none;
     }
+}
+
+/* Homepage Contact Section */
+.contact-section {
+    padding: 100px 0;
+    background: linear-gradient(180deg, #050510 0%, #0a0a20 100%);
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--card-bg);
+    padding: 50px 30px;
+    border-radius: 20px;
+    border: var(--glass-border);
+    box-shadow: var(--shadow-soft);
+    position: relative;
+    z-index: 10;
+}
+
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--primary-accent), transparent, var(--secondary-accent));
+    z-index: -1;
+    border-radius: 22px;
+    opacity: 0.3;
+    filter: blur(10px);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background: #050510;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 8px;
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.15);
+}
+
+.contact-form .btn-submit {
+    width: 100%;
+    background: var(--primary-accent);
+    color: #000;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.2);
+    font-size: 1.1rem;
+}
+
+.contact-form .btn-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+    background: #fff;
+}
+
+/* Ensure Containers are Centered and not too wide */
+.container {
+    max-width: 1100px;
+    /* Slightly reduced for better focus */
+    margin: 0 auto;
+    padding: 0 20px;
 }
