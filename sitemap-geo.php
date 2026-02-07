@@ -16,13 +16,8 @@ $combinations = $stmt->fetchAll(PDO::FETCH_ASSOC);
 echo '<?xml version="1.0" encoding="UTF-8"?>';
 ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <?php foreach ($combinations as $row): ?>
         <url>
-            <loc>
-                <?= $base_url ?>/
-                <?= $row['service_slug'] ?>/
-                <?= $row['zone_slug'] ?>
-            </loc>
+            <loc><?= $base_url ?>/<?= $row['service_slug'] ?>/<?= $row['zone_slug'] ?></loc>
             <changefreq>monthly</changefreq>
             <priority>0.6</priority>
         </url>
