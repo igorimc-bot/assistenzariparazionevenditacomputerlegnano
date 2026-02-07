@@ -144,7 +144,8 @@ ul {
 .hero-geo {
     background: var(--gradient-hero);
     position: relative;
-    padding: 180px 0 140px;
+    padding: 140px 0 100px;
+    /* Reduced from 180px/140px */
     text-align: center;
     overflow: hidden;
 }
