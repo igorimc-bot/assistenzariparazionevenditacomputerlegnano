@@ -62,7 +62,7 @@ $meta_description = "Cerchi " . htmlspecialchars($service['name']) . " a " . htm
             <h1>
                 <?= $page_title ?>
             </h1>
-            <p>Servizio professionale disponibile H24 a
+            <p>Servizio informatico rapido e professionale a
                 <?= htmlspecialchars($zone['name']) ?>.
             </p>
             <div class="hero-buttons">
@@ -80,7 +80,8 @@ $meta_description = "Cerchi " . htmlspecialchars($service['name']) . " a " . htm
                     <p class="intro-text">Stai cercando un tecnico esperto per
                         <strong><?= htmlspecialchars($service['name']) ?> a
                             <?= htmlspecialchars($zone['name']) ?></strong>? Offriamo un servizio di pronto intervento
-                        professionale, risolutivo e trasparente.</p>
+                        professionale, risolutivo e trasparente.
+                    </p>
 
                     <div class="benefits-grid">
                         <div class="benefit-item">

@@ -45,7 +45,7 @@ $zones = get_all_zones($pdo);
         <div class="hero-overlay"></div>
         <div class="container">
             <h1>Assistenza Informatica Professionale a Legnano e Provincia</h1>
-            <p>Interventi rapidi e garantiti a Legnano e dintorni. Operativi H24.</p>
+            <p>Interventi rapidi e garantiti a Legnano e dintorni. Operativi con la massima rapidità.</p>
             <div class="hero-buttons">
                 <a href="#contatti" class="btn-hero">Chiama Ora</a>
                 <a href="#servizi" class="btn-hero-secondary">I Nostri Servizi</a>
