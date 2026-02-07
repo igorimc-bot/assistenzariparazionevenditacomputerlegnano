@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Redirect /admin to /admin/index.php if trailing slash is missing
+RewriteRule ^admin$ admin/index.php [L]
+
+# Route for specific service and zone (e.g., /elettricista-milano/legnano)
+# Assuming format: /service-slug/zone-slug
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/([^/]+)$ template_geo.php?service=$1&zone=$2 [L,QSA]
+
+# Route for just service (e.g., /elettricista-milano) - fallback or specific page
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)$ template_geo.php?service=$1 [L,QSA]
+
+# ErrorDocument 404 /404.php
