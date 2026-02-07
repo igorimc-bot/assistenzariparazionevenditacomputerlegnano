@@ -68,7 +68,7 @@ $zones = get_all_zones($pdo);
                         <p>
                             <?= htmlspecialchars($service['short_description']) ?>
                         </p>
-                        <a href="/riparazione-pc/<?= $service['slug'] ?>" class="btn-text">Scopri di più <i
+                        <a href="/<?= $service['slug'] ?>/legnano" class="btn-text">Scopri di più <i
                                 class="fas fa-arrow-right"></i></a>
                     </div>
                 <?php endforeach; ?>
