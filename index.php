@@ -37,6 +37,15 @@ $zones = get_all_zones($pdo);
     </header>
 
     <section class="hero">
+        <div class="hero-slider">
+            <div class="slide" style="background-image: url('https://source.unsplash.com/1920x1080/?gaming,pc,rgb')">
+            </div>
+            <div class="slide"
+                style="background-image: url('https://source.unsplash.com/1920x1080/?server,datacenter,blue')"></div>
+            <div class="slide"
+                style="background-image: url('https://source.unsplash.com/1920x1080/?motherboard,circuit,tech')"></div>
+        </div>
+        <div class="hero-overlay"></div>
         <div class="container">
             <h1>Assistenza Informatica Professionale a Legnano e Provincia</h1>
             <p>Interventi rapidi e garantiti a Legnano e dintorni. Operativi H24.</p>
