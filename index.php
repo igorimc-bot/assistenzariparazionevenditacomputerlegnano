@@ -153,13 +153,7 @@ $zones = get_all_zones($pdo);
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy;
-                <?= date('Y') ?> La Legnano Informatica. P.IVA xxxxxxxxxx
-            </p>
-        </div>
-    </footer>
+    <?php include 'includes/footer.php'; ?>
 
 </body>
 

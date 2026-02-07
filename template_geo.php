@@ -216,14 +216,7 @@ $meta_description = "Cerchi " . htmlspecialchars($service['name']) . " a " . htm
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <p>&copy;
-                <?= date('Y') ?> La Legnano Informatica. Servizio attivo a
-                <?= htmlspecialchars($zone['name']) ?> e limitrofi.
-            </p>
-        </div>
-    </footer>
+    <?php include 'includes/footer.php'; ?>
 
 </body>
 
