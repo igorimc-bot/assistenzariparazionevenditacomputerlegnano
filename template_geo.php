@@ -8,6 +8,7 @@ $zone_slug = $_GET['zone'] ?? 'legnano'; // Default to Legnano if not specified
 $service = get_service_by_slug($pdo, $service_slug);
 $zone = get_zone_by_slug($pdo, $zone_slug);
 $all_zones = get_all_zones($pdo);
+$all_services = get_all_services($pdo);
 
 if (!$service) {
     // Falback: redirect to home or show 404
@@ -89,9 +90,6 @@ $meta_description = "Cerchi " . htmlspecialchars($service['name']) . " a " . htm
                     <h3>Richiedi Assistenza</h3>
                     <p>Ti risponderemo in pochi minuti.</p>
                     <form action="/process_lead.php" method="POST">
-                        <input type="hidden" name="service_id" value="<?= $service['id'] ?>">
-                        <input type="hidden" name="zone_id" value="<?= $zone['id'] ?? '' ?>">
-
                         <div class="form-group">
                             <label>Nome</label>
                             <input type="text" name="name" required>
@@ -99,15 +97,48 @@ $meta_description = "Cerchi " . htmlspecialchars($service['name']) . " a " . htm
                         <div class="form-group">
                             <label>Telefono</label>
                             <input type="tel" name="phone" required>
+                        </div>
+                        <div class="form-group">
                             <label>Email (Opzionale)</label>
                             <input type="email" name="email">
                         </div>
+
                         <div class="form-group">
-                            <label>Telefono</label>
-                            <input type="tel" name="phone" required>
+                            <label>Servizio richiesto</label>
+                            <select name="service_id" required>
+                                <?php foreach ($all_services as $s): ?>
+                                    <option value="<?= $s['id'] ?>" <?= $s['id'] == $service['id'] ? 'selected' : '' ?>>
+                                        <?= htmlspecialchars($s['name']) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
+
                         <div class="form-group">
-                            <label>Messaggio</label>
+                            <label>Zona di intervento</label>
+                            <select name="zone_id" required>
+                                <?php foreach ($all_zones as $z): ?>
+                                    <option value="<?= $z['id'] ?>" <?= (isset($zone['id']) && $z['id'] == $zone['id']) ? 'selected' : '' ?>>
+                                        <?= htmlspecialchars($z['name']) ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Tipo di richiesta</label>
+                            <div class="checkbox-group-vertical">
+                                <label><input type="checkbox" name="request_type[]" value="info"> Richiesta
+                                    Informazioni</label>
+                                <label><input type="checkbox" name="request_type[]" value="quote"> Richiesta
+                                    Preventivo</label>
+                                <label><input type="checkbox" name="request_type[]" value="visit"> Uscita
+                                    Assistenza</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Dettagli problema</label>
                             <textarea name="message" rows="3"></textarea>
                         </div>
 

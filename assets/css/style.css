@@ -391,6 +391,7 @@ ul {
 }
 
 .contact-form input,
+.contact-form select,
 .contact-form textarea {
     width: 100%;
     background: #f8fafc;
@@ -399,6 +400,63 @@ ul {
     border-radius: 8px;
     margin-bottom: 15px;
     font-family: inherit;
+    transition: var(--transition);
+    appearance: none;
+    /* Reset for selects */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+.form-row {
+    display: flex;
+    gap: 15px;
+}
+
+.form-row input,
+.form-row select {
+    flex: 1;
+}
+
+.request-types {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.request-types p {
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.checkbox-group label,
+.checkbox-group-vertical label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    cursor: pointer;
+}
+
+.checkbox-group-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkbox-group input[type="checkbox"],
+.checkbox-group-vertical input[type="checkbox"] {
+    width: auto;
+    margin: 0;
 }
 
 .contact-form input:focus {
@@ -464,6 +522,7 @@ ul {
 }
 
 .col-form input,
+.col-form select,
 .col-form textarea {
     width: 100%;
     background: #ffffff;
@@ -472,6 +531,11 @@ ul {
     border-radius: 8px;
     font-family: inherit;
     transition: var(--transition);
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
 }
 
 .col-form input:focus {

@@ -110,9 +110,37 @@ $zones = get_all_zones($pdo);
         <div class="container">
             <h2 class="section-title">Contattaci</h2>
             <form action="process_lead.php" method="POST" class="contact-form">
-                <input type="text" name="name" placeholder="Nome" required>
-                <input type="tel" name="phone" placeholder="Telefono" required>
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Nome" required>
+                    <input type="tel" name="phone" placeholder="Telefono" required>
+                </div>
                 <input type="email" name="email" placeholder="Email">
+
+                <div class="form-row">
+                    <select name="service_id" required>
+                        <option value="" disabled selected>Seleziona Servizio</option>
+                        <?php foreach ($services as $s): ?>
+                            <option value="<?= $s['id'] ?>"><?= htmlspecialchars($s['name']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+
+                    <select name="zone_id" required>
+                        <option value="" disabled selected>Seleziona Zona</option>
+                        <?php foreach ($zones as $z): ?>
+                            <option value="<?= $z['id'] ?>"><?= htmlspecialchars($z['name']) ?></option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
+
+                <div class="request-types">
+                    <p>Tipo di richiesta:</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="request_type[]" value="info"> Richiesta Informazioni</label>
+                        <label><input type="checkbox" name="request_type[]" value="quote"> Richiesta Preventivo</label>
+                        <label><input type="checkbox" name="request_type[]" value="visit"> Uscita Assistenza</label>
+                    </div>
+                </div>
+
                 <textarea name="message" placeholder="Descrivi il problema" rows="4"></textarea>
 
                 <div class="privacy-wrapper">
