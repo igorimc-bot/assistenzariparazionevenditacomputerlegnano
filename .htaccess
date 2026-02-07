@@ -8,6 +8,12 @@ RewriteRule ^privacy-policy$ privacy-policy.php [L]
 RewriteRule ^termini-servizio$ termini-servizio.php [L]
 RewriteRule ^cookie-policy$ cookie-policy.php [L]
 
+# Sitemap rules
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+RewriteRule ^sitemap-main\.xml$ sitemap-main.php [L]
+RewriteRule ^sitemap-services\.xml$ sitemap-services.php [L]
+RewriteRule ^sitemap-geo\.xml$ sitemap-geo.php [L]
+
 # Route for specific service and zone (e.g., /riparazione-pc/legnano)
 # Assuming format: /service-slug/zone-slug
 RewriteCond %{REQUEST_FILENAME} !-f
