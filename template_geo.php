@@ -114,7 +114,8 @@ $meta_description = "Cerchi " . htmlspecialchars($service['name']) . " a " . htm
                         <div class="privacy-wrapper">
                             <input type="checkbox" id="privacy_geo" name="privacy" required>
                             <label for="privacy_geo">Accetto la <a href="/privacy-policy" target="_blank">Privacy
-                                    Policy</a> e i termini del servizio. Acconsento al trattamento dei dati per la
+                                    Policy</a> e i <a href="/termini-servizio" target="_blank">Termini del Servizio</a>.
+                                Acconsento al trattamento dei dati per la
                                 gestione della richiesta.</label>
                         </div>
 
