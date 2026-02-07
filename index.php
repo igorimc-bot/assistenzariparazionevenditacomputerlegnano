@@ -56,6 +56,9 @@ $zones = get_all_zones($pdo);
     <section id="servizi" class="services-section">
         <div class="container">
             <h2 class="section-title">I Nostri Servizi</h2>
+            <p class="section-subtitle">Offriamo soluzioni informatiche complete per privati e aziende. Dalla
+                riparazione hardware allo sviluppo software, i nostri tecnici esperti sono pronti a risolvere ogni tua
+                esigenza con professionalità e rapidità.</p>
             <div class="services-grid">
                 <?php foreach ($services as $service): ?>
                     <div class="service-card">
@@ -75,7 +78,9 @@ $zones = get_all_zones($pdo);
     <section id="zone" class="zones-section bg-light">
         <div class="container">
             <h2 class="section-title">Dove Operiamo</h2>
-            <p class="text-center">Siamo presenti a Legnano, Milano e in tutta la provincia.</p>
+            <p class="section-subtitle">La nostra rete di assistenza copre capillarmente Legnano, Milano e tutti i
+                comuni della zona. Garantiamo interventi rapidi a domicilio o presso la nostra sede, assicurando massima
+                tempestività per ogni emergenza informatica.</p>
             <div class="zones-wrapper">
                 <div class="zones-column">
                     <h3><i class="fas fa-map-marker-alt"></i> Comuni Limitrofi</h3>

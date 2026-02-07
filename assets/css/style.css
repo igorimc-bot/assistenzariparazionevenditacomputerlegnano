@@ -257,7 +257,17 @@ ul {
 .section-title {
     text-align: center;
     font-size: 2.5rem;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
+    /* Reduced to leave space for subtitle */
+}
+
+.section-subtitle {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 .section-title span {
