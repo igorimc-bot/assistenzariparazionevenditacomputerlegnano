@@ -636,8 +636,8 @@ ul {
     background-size: cover;
     background-position: center;
     opacity: 0;
-    filter: brightness(0.3) blur(2px);
-    /* Cinematic effect: dark and blurry */
+    filter: brightness(0.5) blur(1px);
+    /* Increased brightness and reduced blur for better clarity */
     animation: slideAnimation 15s infinite;
 }
 
