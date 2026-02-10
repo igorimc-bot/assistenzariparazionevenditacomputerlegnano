@@ -147,7 +147,6 @@ $services = get_all_services($pdo);
                                     <th width="50" class="text-center"><i class="fas fa-arrows-alt-v"></i></th>
                                     <th>Nome</th>
                                     <th>Slug</th>
-                                    <th>Descrizione</th>
                                     <th width="100" class="text-center">Azioni</th>
                                 </tr>
                             </thead>
@@ -162,9 +161,6 @@ $services = get_all_services($pdo);
                                         </td>
                                         <td class="align-middle">
                                             <span class="badge bg-secondary"><?= htmlspecialchars($svc['slug']) ?></span>
-                                        </td>
-                                        <td class="align-middle text-muted small">
-                                            <?= htmlspecialchars($svc['description'] ?? '') ?>
                                         </td>
                                         <td class="text-center align-middle">
                                             <form method="POST"
