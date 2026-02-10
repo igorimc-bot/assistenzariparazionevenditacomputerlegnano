@@ -42,7 +42,7 @@ function slugify($text)
 
 function get_all_services($pdo)
 {
-    $stmt = $pdo->query("SELECT * FROM services ORDER BY name ASC");
+    $stmt = $pdo->query("SELECT * FROM services ORDER BY sort_order ASC, name ASC");
     return $stmt->fetchAll();
 }
 

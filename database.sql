@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS `services` (
   `name` varchar(100) NOT NULL,
   `slug` varchar(100) NOT NULL,
   `description` text,
+  `sort_order` int(11) NOT NULL DEFAULT 0,
   `created_at` timestamp DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `slug` (`slug`)
