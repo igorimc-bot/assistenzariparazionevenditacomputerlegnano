@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $zoneName = get_zone_name_by_id($pdo, $zone_id);
 
             // Prepare Email Content
-            $subject = "Nuova Richiesta da RIPARAZIONE PC LEGNANO";
+            $subject = "Nuova richiesta per $serviceName da $name";
             $emailBody = "
             <h2>Nuova Richiesta di Assistenza</h2>
             <p><strong>Nome:</strong> " . htmlspecialchars($name) . "</p>
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $to = ['igorimc@gmail.com', 'lalegnanoinformatica@gmail.com', 'assistenzacomputerlegnano@gmail.com'];
 
             // Send
-            $mailer->send($to, $subject, $emailBody, 'Lead System', $email ?: null);
+            $mailer->send($to, $subject, $emailBody, 'RIPARAZIONE PC LEGNANO', $email ?: null);
             // -------------------------------
 
             // Redirect to thank you page
