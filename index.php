@@ -169,16 +169,58 @@ $zones = get_all_zones($pdo);
     <div id="cookie-consent-banner">
         <div class="cookie-content">
             <div class="cookie-text">
+                <h3>Questo sito utilizza i cookie</h3>
                 <p>
-                    Utilizziamo i cookie per migliorare la tua esperienza di navigazione e analizzare il traffico del
-                    sito.
-                    Accettando, consenti l'uso di cookie analitici.
+                    Utilizziamo i cookie per migliorare la tua esperienza di navigazione.
                     <a href="/cookie-policy" target="_blank">Maggiori informazioni</a>
                 </p>
             </div>
             <div class="cookie-buttons">
-                <button id="cookie-accept" class="cookie-btn">Accetta</button>
-                <button id="cookie-reject" class="cookie-btn">Rifiuta</button>
+                <button id="cookie-accept-all" class="cookie-btn">Accetta tutti</button>
+                <button id="cookie-reject-all" class="cookie-btn">Rifiuta tutti</button>
+                <button id="cookie-manage" class="cookie-btn">Gestisci preferenze</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Preferences Modal -->
+    <div id="cookie-preferences-modal">
+        <div class="cookie-modal-content">
+            <div class="cookie-modal-header">
+                <h2>Gestisci le tue preferenze sui cookie</h2>
+                <button id="cookie-modal-close">&times;</button>
+            </div>
+            <div class="cookie-modal-body">
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h3>Cookie Necessari</h3>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" checked disabled>
+                            <span class="cookie-toggle-slider"></span>
+                        </label>
+                    </div>
+                    <p>
+                        Questi cookie sono essenziali per il funzionamento del sito e non possono essere disabilitati.
+                        Vengono utilizzati per la navigazione e per fornire le funzionalità di base.
+                    </p>
+                </div>
+
+                <div class="cookie-category">
+                    <div class="cookie-category-header">
+                        <h3>Cookie Analitici</h3>
+                        <label class="cookie-toggle">
+                            <input type="checkbox" id="cookie-analytics">
+                            <span class="cookie-toggle-slider"></span>
+                        </label>
+                    </div>
+                    <p>
+                        Questi cookie ci aiutano a capire come i visitatori interagiscono con il nostro sito.
+                        Raccogliamo e analizziamo dati in forma anonima tramite Google Analytics.
+                    </p>
+                </div>
+            </div>
+            <div class="cookie-modal-footer">
+                <button id="cookie-save-preferences" class="cookie-btn">Salva preferenze</button>
             </div>
         </div>
     </div>
