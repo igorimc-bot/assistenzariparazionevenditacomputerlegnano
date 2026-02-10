@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $stmt->execute([$name, $phone, $email, $message, $service_id, $zone_id]);
 
             // --- SEND EMAIL NOTIFICATION ---
-            require_once 'includes/mailer.php';
+            require_once 'includes/functions.php';
 
             // SMTP Config
             $smtpHost = 'authsmtp.securemail.pro';
@@ -27,6 +27,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $smtpPass = 'W6WT3k7HEe';
 
             $mailer = new SimpleSMTP($smtpHost, $smtpPort, $smtpUser, $smtpPass);
+
+            // Get Names
+            $serviceName = get_service_name_by_id($pdo, $service_id);
+            $zoneName = get_zone_name_by_id($pdo, $zone_id);
 
             // Prepare Email Content
             $subject = "Nuovo Lead: $name";
@@ -37,24 +41,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p><strong>Email:</strong> " . htmlspecialchars($email) . "</p>
             <p><strong>Messaggio:</strong><br>" . nl2br(htmlspecialchars($message)) . "</p>
             <hr>
-            <p>Recap: ID Servizio: $service_id, ID Zona: $zone_id</p>
+            <p><strong>Servizio:</strong> $serviceName</p>
+            <p><strong>Zona:</strong> $zoneName</p>
             ";
 
             // Recipients
-            $to = ['igorimc@gmail.com', 'lalegnanoinformatica@gmail.com'];
+            $to = ['igorimc@gmail.com', 'lalegnanoinformatica@gmail.com', 'assistenzacomputerlegnano@gmail.com'];
 
             // Send
             $mailer->send($to, $subject, $emailBody, 'Lead System', $email ?: null);
             // -------------------------------
 
-            // Redirect to thank you page or back with success
-            echo "<script>alert('Richiesta inviata con successo!'); window.history.back();</script>";
+            // Redirect to thank you page
+            header("Location: /thank-you.php");
+            exit;
         } catch (PDOException $e) {
             echo "Errore Database: " . $e->getMessage();
         } catch (Exception $e) {
             // Log email error but don't stop flow
             error_log("Email error: " . $e->getMessage());
-            echo "<script>alert('Richiesta salvata, ma errore invio notifica.'); window.history.back();</script>";
+            header("Location: /thank-you.php");
+            exit;
         }
     } else {
         echo "Nome e Telefono sono obbligatori.";

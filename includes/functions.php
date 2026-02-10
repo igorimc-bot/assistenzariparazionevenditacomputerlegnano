@@ -65,4 +65,22 @@ function get_zone_by_slug($pdo, $slug)
     $stmt->execute([$slug]);
     return $stmt->fetch();
 }
+
+function get_service_name_by_id($pdo, $id)
+{
+    if (!$id)
+        return 'N/A';
+    $stmt = $pdo->prepare("SELECT name FROM services WHERE id = ?");
+    $stmt->execute([$id]);
+    return $stmt->fetchColumn() ?: 'N/A';
+}
+
+function get_zone_name_by_id($pdo, $id)
+{
+    if (!$id)
+        return 'N/A';
+    $stmt = $pdo->prepare("SELECT name FROM zones WHERE id = ?");
+    $stmt->execute([$id]);
+    return $stmt->fetchColumn() ?: 'N/A';
+}
 ?>
